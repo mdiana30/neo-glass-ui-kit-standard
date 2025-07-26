@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="button-showcase">
+    <h2>Buttons</h2>
+
+    <div class="groups-wrapper">
+      <section class="button-group">
+        <h3>Primary</h3>
+        <app-button title="Primary Small" palette="primary" size="small"></app-button>
+        <app-button title="Primary Medium" palette="primary" size="medium"></app-button>
+        <app-button title="Primary Large" palette="primary" size="large"></app-button>
+        <app-button title="Disabled" palette="primary" [isDisabled]="true"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>Outline</h3>
+        <app-button title="Outline Small" palette="outline" size="small"></app-button>
+        <app-button title="Outline Medium" palette="outline" size="medium"></app-button>
+        <app-button title="Outline Large" palette="outline" size="large"></app-button>
+        <app-button title="Disabled" palette="outline" [isDisabled]="true"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>CTA</h3>
+        <app-button title="CTA Small" palette="CTA" size="small"></app-button>
+        <app-button title="CTA Medium" palette="CTA" size="medium"></app-button>
+        <app-button title="CTA Large" palette="CTA" size="large"></app-button>
+        <app-button title="Disabled" palette="CTA" [isDisabled]="true"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>Icon</h3>
+        <app-button palette="icon" icon="fas fa-bolt"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>Loading State</h3>
+        <app-button title="Loading Button" palette="primary" size="medium" [isLoading]="true"
+          [isDisabled]="false"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>Badge</h3>
+        <app-button palette="icon" icon="fas fa-bell" [badge]="5"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>Full Width Button</h3>
+        <app-button title="Full Width" palette="primary" [fullWidth]="true"></app-button>
+      </section>
+
+      <section class="button-group">
+        <h3>Info Button + Tooltip</h3>
+        <app-button palette="icon" icon="fas fa-info-circle" [tooltip]="'More info'"
+          [ariaLabel]="'Information button'"></app-button>
+      </section>
+    </div>
+  </div>
+</div>

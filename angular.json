@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "projects": {
+    "angular-ui-kit": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular-ui-kit",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+           "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-ui-kit:build"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-ui-kit"
+}

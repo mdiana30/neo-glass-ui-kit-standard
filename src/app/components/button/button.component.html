@@ -1,0 +1,27 @@
+<button
+  [type]="type"
+  [disabled]="isDisabled || isLoading"
+  [attr.aria-label]="ariaLabel || title"
+  [attr.title]="tooltip"
+>
+  <ng-container *ngIf="isLoading; else buttonContent">
+    <span class="spinner"></span>
+  </ng-container>
+
+  <ng-template #buttonContent>
+    <span class="icon" *ngIf="icon && iconPosition === 'left'">
+      <i [class]="icon"></i>
+    </span>
+
+    <span class="text">
+      <span class="title">{{ title }}</span>
+      <span class="subtitle" *ngIf="subtitle">{{ subtitle }}</span>
+    </span>
+
+    <span class="icon" *ngIf="icon && iconPosition === 'right'">
+      <i [class]="icon"></i>
+    </span>
+  </ng-template>
+
+  <span class="badge pulse" *ngIf="badge">{{ badge }}</span>
+</button>

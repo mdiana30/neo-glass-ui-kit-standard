@@ -1,0 +1,222 @@
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-button {
+  button {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+    // border: 2px solid transparent;
+    text-align: center;
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+    color: inherit;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+
+      .title {
+        font-size: 1rem;
+      }
+
+      .subtitle {
+        font-size: 0.75rem;
+        opacity: 0.8;
+      }
+    }
+
+    .icon i {
+      font-size: 1.2rem;
+    }
+
+    &:disabled,
+    &.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+      filter: none;
+    }
+  }
+
+  &.small button {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  &.large button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  &.primary button {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    // border-color: #6366f1;
+    color: #f8fafc;
+    box-shadow: 0 0 4px rgba(99, 102, 241, 0.6), inset 0 0 2px rgba(168, 85, 247, 0.5);
+
+    &:hover {
+      filter: brightness(1.15);
+      transform: scale(1.05);
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.8), inset 0 0 6px rgba(168, 85, 247, 0.7);
+    }
+  }
+
+  &.outline button {
+    position: relative;
+    background: transparent;
+    color: white;
+    // padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 0;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 8px;
+      padding: 2px;
+      background: linear-gradient(135deg, #00f5a0, #00d9f5);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.15);
+      box-shadow: 0 0 8px #00f5a0cc, inset 0 0 0px #00d9f5b3;
+    }
+  }
+
+  &.icon button {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    border-color: #0ea5e9;
+    color: #f8fafc;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    overflow: visible;
+
+    .icon i {
+      font-size: 1.5rem;
+    }
+
+    .text {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+      box-shadow: 0 0 10px #0ea5e9, inset 0 0 4px #6366f1;
+    }
+  }
+
+  &.CTA button {
+    background: linear-gradient(270deg, #ff1cf7, #715df2, #ff1cf7);
+    background-size: 600% 600%;
+    border-color: #ff1cf7;
+    color: #fefefe;
+    box-shadow: 0 0 10px #ff1cf7, inset 0 0 8px #ff1cf7;
+    animation: gradientShift 6s ease infinite;
+
+    &:hover {
+      filter: brightness(1.2);
+      transform: scale(1.05);
+      box-shadow: 0 0 14px #ff1cf7, inset 0 0 10px #ff1cf7;
+    }
+  }
+}
+
+.app-button.full-width button {
+  width: 100%;
+  display: flex;
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.3rem;
+  background: #ef4444;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(239, 68, 68, 0.6);
+  z-index: 2;
+  pointer-events: none;
+
+  &.pulse {
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
