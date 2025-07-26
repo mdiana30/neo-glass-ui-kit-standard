@@ -37,8 +37,19 @@
       border-radius: 6px;
     }
 
-    router-outlet {
-      margin-left: 25vw;
+    app-sidebar {
+      width: 25vw;
+      min-width: 240px;
+      max-width: 320px;
+      flex-shrink: 0;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
     }
   }
 }

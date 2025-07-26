@@ -1,0 +1,16 @@
+<div class="card-info">
+  <div class="ribbon" *ngIf="badge">{{ badge }}</div>
+
+  <div class="card-header">
+    <h3>{{ title }}</h3>
+    <span class="subtitle">{{ subtitle }}</span>
+  </div>
+
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="card-footer" *ngIf="buttonText">
+    <app-button [palette]="buttonPalette" [title]="buttonText"></app-button>
+  </div>
+</div>

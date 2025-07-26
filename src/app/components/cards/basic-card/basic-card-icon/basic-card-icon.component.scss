@@ -1,0 +1,56 @@
+.card-icon {
+  background: #111827;
+  color: #fff;
+  padding: 1.75rem;
+  text-align: center;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(56, 189, 248, 0.45);
+  }
+
+  i {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    color: #38bdf8;
+    z-index: 1;
+    position: relative;
+  }
+
+  h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    z-index: 1;
+    position: relative;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    z-index: 1;
+    position: relative;
+  }
+
+  app-button {
+    z-index: 1;
+    position: relative;
+  }
+}

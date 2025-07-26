@@ -147,20 +147,75 @@
     }
   }
 
-  &.CTA button {
-    background: linear-gradient(270deg, #ff1cf7, #715df2, #ff1cf7);
-    background-size: 600% 600%;
-    border-color: #ff1cf7;
-    color: #fefefe;
-    box-shadow: 0 0 10px #ff1cf7, inset 0 0 8px #ff1cf7;
-    animation: gradientShift 6s ease infinite;
+ &.CTA button {
+  background: linear-gradient(120deg, #ff4ecd, #826cf0, #00f0ff);
+  background-size: 300% 300%;
+  animation: morphGlow 6s ease infinite;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(255, 78, 205, 0.4), 0 0 25px rgba(0, 240, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, filter 0.3s ease;
 
-    &:hover {
-      filter: brightness(1.2);
-      transform: scale(1.05);
-      box-shadow: 0 0 14px #ff1cf7, inset 0 0 10px #ff1cf7;
+  .text {
+    font-size: 1rem;
+    z-index: 2;
+    position: relative;
+  }
+
+  .icon {
+    margin-left: 0.75rem;
+    font-size: 1.25rem;
+    z-index: 2;
+    position: relative;
+
+    i {
+      animation: iconPop 2s infinite ease-in-out;
     }
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    filter: blur(25px);
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  &:hover {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+    box-shadow: 0 6px 25px rgba(255, 78, 205, 0.6), 0 0 35px rgba(0, 240, 255, 0.3);
+  }
+}
+
+@keyframes morphGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes iconPop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
 }
 
 .app-button.full-width button {
@@ -169,19 +224,19 @@
 }
 
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
+// @keyframes gradientShift {
+//   0% {
+//     background-position: 0% 50%;
+//   }
 
-  50% {
-    background-position: 100% 50%;
-  }
+//   50% {
+//     background-position: 100% 50%;
+//   }
 
-  100% {
-    background-position: 0% 50%;
-  }
-}
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
 
 .badge {
   position: absolute;
