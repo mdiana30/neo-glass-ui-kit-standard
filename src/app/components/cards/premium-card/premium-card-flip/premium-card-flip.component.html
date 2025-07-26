@@ -1,0 +1,18 @@
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" [style.backgroundImage]="'url(' + imageSrc + ')'">
+      <h3>{{ title }}</h3>
+    </div>
+
+    <div class="flip-card-side"></div>
+
+    <div class="flip-card-back">
+      <div class="back-content">
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+        <app-button [title]="buttonText" [palette]="buttonPalette"></app-button>
+      </div>
+    </div>
+  </div>
+</div>
+

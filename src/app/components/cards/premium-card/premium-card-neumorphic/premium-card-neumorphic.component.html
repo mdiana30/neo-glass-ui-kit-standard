@@ -1,0 +1,10 @@
+<div class="premium-card-neumorphic" [style.backgroundImage]="'url(' + imageSrc + ')'">
+  <div class="overlay">
+    <div class="icon-wrapper">
+      <i [class]="icon"></i>
+    </div>
+    <h3>{{ title }}</h3>
+    <p>{{ description }}</p>
+    <app-button *ngIf="buttonText" [palette]="buttonPalette" [title]="buttonText"></app-button>
+  </div>
+</div>

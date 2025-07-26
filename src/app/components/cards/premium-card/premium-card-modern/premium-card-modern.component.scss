@@ -1,0 +1,81 @@
+.premium-card-modern {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(55 24 76), rgb(73 93 160));
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 24px rgba(129, 140, 248, 0.25),
+    inset 0 0 48px rgba(129, 140, 248, 0.1);
+  color: #e0e6ff;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  height: 100%;
+  width: 100%;
+  // max-width: 320px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 14px 28px rgba(129, 140, 248, 0.45),
+      inset 0 0 60px rgba(129, 140, 248, 0.25);
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .image {
+    height: 140px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .content {
+    padding: 1.6rem 1.8rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      color: #9f80e6;
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      color: #d1d5f0;
+      line-height: 1.45;
+      flex-grow: 1;
+    }
+
+    ::ng-deep app-button {
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.premium-card-glow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0f0f1a;
+  color: #e0e0ff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.4);
+  }
+
+  .glow-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(0, 255, 255, 0.2);
+    border-radius: inherit;
+    box-shadow:
+      0 0 15px rgba(0, 255, 255, 0.2),
+      inset 0 0 25px rgba(0, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .image {
+    height: 130px;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.7);
+    z-index: 2;
+  }
+
+  .content {
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+
+    .icon {
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: #00ffff;
+      animation: pulseGlow 2s infinite alternate;
+      text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff66;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #c3caff;
+      margin-bottom: 1.2rem;
+    }
+
+    .glow-button app-button {
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: -32px;
+    background: #00ffff;
+    color: #0f0f1a;
+    transform: rotate(45deg);
+    font-size: 0.75rem;
+    padding: 0.4rem 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px #00ffffaa;
+    z-index: 5;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 4px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 16px #00ffff;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="premium-card-border">
+  <div class="border-overlay"></div>
+
+  <div class="image" [style.backgroundImage]="'url(' + imageSrc + ')'"></div>
+
+  <div class="content">
+    <div class="icon" *ngIf="icon">
+      <i [class]="icon"></i>
+    </div>
+    <h3>{{ title }}</h3>
+    <p>{{ description }}</p>
+
+    <app-button
+      *ngIf="buttonText"
+      [title]="buttonText"
+      [palette]="buttonPalette"
+      [size]="buttonSize"
+      [icon]="buttonIcon"
+      [iconPosition]="buttonIconPosition"
+      [fullWidth]="buttonFullWidth">
+    </app-button>
+  </div>
+</div>
