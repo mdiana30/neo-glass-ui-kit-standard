@@ -8,8 +8,13 @@ import { Component, Input } from '@angular/core';
 export class PremiumCardModernComponent {
   @Input() title = '';
   @Input() description = '';
-  @Input() imageSrc = '';
   @Input() icon = '';
-  @Input() buttonText = '';
+  @Input() imageSrc = '';
   @Input() buttonPalette = 'primary';
+  @Input() buttonText: string = '';
+  @Input() buttonSize: 'small' | 'medium' | 'large' = 'medium';
+  @Input() buttonIcon?: string;
+  @Input() buttonIconPosition: 'left' | 'right' = 'left';
+  @Input() buttonFullWidth: boolean = false;
+  @Input() premiumButton: boolean = false;
 }

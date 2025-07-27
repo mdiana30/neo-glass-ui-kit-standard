@@ -62,18 +62,28 @@
   }
 
   &.small button {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.875rem;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    height: 2rem;
+    width: 130px;
+  }
+
+  &.medium button {
+    padding: 1.1rem 2.2rem;
+    font-size: 1.05rem;
+    height: 2.5rem;
+    width: 150px;
   }
 
   &.large button {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
+    padding: 1.25rem 2.4rem;
+    font-size: 1.15rem;
+    height: 3rem;
+    width: 170px;
   }
 
   &.primary button {
     background: linear-gradient(135deg, #6366f1, #a855f7);
-    // border-color: #6366f1;
     color: #f8fafc;
     box-shadow: 0 0 4px rgba(99, 102, 241, 0.6), inset 0 0 2px rgba(168, 85, 247, 0.5);
 
@@ -88,7 +98,6 @@
     position: relative;
     background: transparent;
     color: white;
-    // padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -147,96 +156,86 @@
     }
   }
 
- &.CTA button {
-  background: linear-gradient(120deg, #ff4ecd, #826cf0, #00f0ff);
-  background-size: 300% 300%;
-  animation: morphGlow 6s ease infinite;
-  color: #ffffff;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  border-radius: 9999px;
-  box-shadow: 0 4px 15px rgba(255, 78, 205, 0.4), 0 0 25px rgba(0, 240, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, filter 0.3s ease;
-
-  .text {
-    font-size: 1rem;
-    z-index: 2;
+  &.CTA button {
+    background: linear-gradient(120deg, #ff4ecd, #826cf0, #00f0ff);
+    background-size: 300% 300%;
+    animation: morphGlow 6s ease infinite;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 9999px;
+    box-shadow: 0 4px 15px rgba(255, 78, 205, 0.4), 0 0 25px rgba(0, 240, 255, 0.2);
     position: relative;
-  }
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease;
 
-  .icon {
-    margin-left: 0.75rem;
-    font-size: 1.25rem;
-    z-index: 2;
-    position: relative;
+    .text {
+      font-size: 1rem;
+      z-index: 2;
+      position: relative;
+    }
 
-    i {
-      animation: iconPop 2s infinite ease-in-out;
+    .icon {
+      margin-left: 0.75rem;
+      font-size: 1.25rem;
+      z-index: 2;
+      position: relative;
+
+      i {
+        animation: iconPop 2s infinite ease-in-out;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: inherit;
+      filter: blur(25px);
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    &:hover {
+      transform: scale(1.08);
+      filter: brightness(1.15);
+      box-shadow: 0 6px 25px rgba(255, 78, 205, 0.6), 0 0 35px rgba(0, 240, 255, 0.3);
     }
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: inherit;
-    filter: blur(25px);
-    z-index: 0;
-    opacity: 0.6;
+  @keyframes morphGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
-  &:hover {
-    transform: scale(1.08);
-    filter: brightness(1.15);
-    box-shadow: 0 6px 25px rgba(255, 78, 205, 0.6), 0 0 35px rgba(0, 240, 255, 0.3);
-  }
-}
+  @keyframes iconPop {
 
-@keyframes morphGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    0%,
+    100% {
+      transform: scale(1);
+    }
 
-@keyframes iconPop {
-  0%, 100% {
-    transform: scale(1);
+    50% {
+      transform: scale(1.15);
+    }
   }
-  50% {
-    transform: scale(1.15);
-  }
-}
 
 }
 
 .app-button.full-width button {
   width: 100%;
   display: flex;
+  max-width: -webkit-fill-available;
 }
-
-
-// @keyframes gradientShift {
-//   0% {
-//     background-position: 0% 50%;
-//   }
-
-//   50% {
-//     background-position: 100% 50%;
-//   }
-
-//   100% {
-//     background-position: 0% 50%;
-//   }
-// }
 
 .badge {
   position: absolute;

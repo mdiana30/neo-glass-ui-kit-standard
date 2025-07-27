@@ -1,0 +1,169 @@
+// Spinner
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #8f5eff;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: spin 1s linear infinite;
+}
+
+// Baza
+button.premium-btn {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  user-select: none;
+  color: #f2f2f2;
+  line-height: 1.2;
+  text-align: center;
+
+  .label {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .icon i {
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &.full-width {
+    width: -webkit-fill-available !important;
+    max-width: -webkit-fill-available;
+  }
+
+  // Dimensiuni standardizate
+  &.small {
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    height: 3rem;
+    width: 130px;
+  }
+
+  &.medium {
+    padding: 1.1rem 2.2rem;
+    font-size: 1.05rem;
+    height: 3.4rem;
+    width: 150px;
+  }
+
+  &.large {
+    padding: 1.25rem 2.4rem;
+    font-size: 1.15rem;
+    height: 3.8rem;
+    width: 170px;
+  }
+}
+
+// Neumorphic
+.premium-btn.neumorphic {
+  background: #1e1e2e;
+  box-shadow:
+    6px 6px 14px #151528,
+    -6px -6px 14px #2a2a40;
+  color: #dedcff;
+
+  &:hover {
+    box-shadow:
+      inset 4px 4px 8px #151528,
+      inset -4px -4px 8px #2a2a40;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: inset 2px 2px 6px #141426;
+  }
+}
+
+// Glassmorphic
+.premium-btn.glassmorphic {
+  background: rgba(55, 55, 100, 0.25);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0ff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: rgba(80, 80, 130, 0.3);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
+  }
+}
+
+// Gradient
+.premium-btn.gradient {
+  background: linear-gradient(135deg, #6f42c1, #4a00e0, #000c3f);
+  background-size: 200%;
+  background-position: left;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(138, 43, 226, 0.4);
+
+  &:hover {
+    background-position: right;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Ripple
+.premium-btn.ripple {
+  background: #2e2e66;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(130, 120, 255, 0.4);
+
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 11%);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: scale(10);
+    opacity: 0;
+    transition: transform 0.6s, opacity 1s;
+  }
+
+  &:active::after {
+    transform: scale(0);
+    opacity: 0.4;
+    transition: 0s;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}

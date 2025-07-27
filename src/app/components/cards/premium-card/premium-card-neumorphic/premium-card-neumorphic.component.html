@@ -5,6 +5,15 @@
     </div>
     <h3>{{ title }}</h3>
     <p>{{ description }}</p>
-    <app-button *ngIf="buttonText" [palette]="buttonPalette" [title]="buttonText"></app-button>
+
+    <ng-template [ngIf]="!premiumButton">
+      <app-button [title]="buttonText" [palette]="buttonPalette" [size]="buttonSize" [icon]="buttonIcon"
+        [iconPosition]="buttonIconPosition" [fullWidth]="buttonFullWidth"></app-button>
+    </ng-template>
+
+    <ng-template [ngIf]="premiumButton">
+      <app-premium-button [title]="buttonText" [palette]="buttonPalette" [size]="buttonSize" [icon]="buttonIcon"
+        [iconPosition]="buttonIconPosition" [fullWidth]="buttonFullWidth"></app-premium-button>
+    </ng-template>
   </div>
 </div>

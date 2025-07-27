@@ -11,15 +11,15 @@
     <p>{{ description }}</p>
 
     <div class="glow-button">
-     <app-button
-      *ngIf="buttonText"
-      [title]="buttonText"
-      [palette]="buttonPalette"
-      [size]="buttonSize"
-      [icon]="buttonIcon"
-      [iconPosition]="buttonIconPosition"
-      [fullWidth]="buttonFullWidth">
-    </app-button>
+      <ng-template [ngIf]="!premiumButton">
+        <app-button [title]="buttonText" [palette]="buttonPalette" [size]="buttonSize" [icon]="buttonIcon"
+          [iconPosition]="buttonIconPosition" [fullWidth]="buttonFullWidth"></app-button>
+      </ng-template>
+
+      <ng-template [ngIf]="premiumButton">
+        <app-premium-button [title]="buttonText" [palette]="buttonPalette" [size]="buttonSize" [icon]="buttonIcon"
+          [iconPosition]="buttonIconPosition" [fullWidth]="buttonFullWidth"></app-premium-button>
+      </ng-template>
     </div>
   </div>
 

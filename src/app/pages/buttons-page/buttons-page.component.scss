@@ -1,27 +1,53 @@
 .groups-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  /* pe mobil o coloană */
+  gap: 3rem;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   .groups-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    /* pe desktop 2 coloane: Basic și Premium */
+    gap: 4rem;
   }
 }
 
-@media (max-width: 600px) {
-  .groups-wrapper {
-    grid-template-columns: 1fr;
+.button-section {
+  background: #1a1a2e;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
+
+  &.basic-buttons {
+    border: 2px solid #4a4af0;
   }
+
+  &.premium-buttons {
+    border: 2px solid #ff6b6b;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #f0f0f5;
+  border-bottom: 3px solid currentColor;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .button-group {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem 3rem;
+  margin-bottom: 2rem;
 
   h3 {
-    font-size: 1.4rem;
+    width: 100%;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #b0b0ff;
@@ -31,11 +57,16 @@
     letter-spacing: 1px;
   }
 
-  app-button {
-    margin-bottom: 0.8rem;
-    max-width: 220px;
+  app-button,
+  app-premium-button {
+    flex: 0 1 auto;
     width: 100%;
+    max-width: -webkit-fill-available;
     transition: transform 0.3s ease;
+
+    &:not(.full-width) {
+      max-width: fit-content;
+    }
 
     &:hover {
       transform: scale(1.05);
@@ -45,19 +76,8 @@
   }
 }
 
-.button-group:nth-last-child(2), 
-.button-group:last-child  {
-  grid-column: span 3;
-
-  @media (max-width: 900px) {
-    grid-column: span 2;
-  }
-
-  @media (max-width: 600px) {
-    grid-column: span 1;
-  }
-
-  app-button {
-    max-width: 100% !important;
+@media (max-width: 600px) {
+  .button-group {
+    gap: 1rem;
   }
 }

@@ -1,0 +1,22 @@
+
+<button
+  [attr.type]="type"
+  [disabled]="isDisabled"
+  [attr.aria-label]="ariaLabel || title"
+  class="premium-btn"
+  [ngClass]="classes"
+>
+  <ng-container *ngIf="loading; else content">
+    <span class="spinner"></span>
+  </ng-container>
+
+  <ng-template #content>
+    <span class="icon" *ngIf="icon && iconPosition === 'left'">
+      <i [class]="icon"></i>
+    </span>
+    <span class="label">{{ title }}</span>
+    <span class="icon" *ngIf="icon && iconPosition === 'right'">
+      <i [class]="icon"></i>
+    </span>
+  </ng-template>
+</button>
