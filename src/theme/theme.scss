@@ -1,0 +1,166 @@
+@import './variables';
+@import './mixins';
+@import './typography';
+
+// Light Theme
+:root {
+  --bg-color: #f4f4f9;
+  --text-color: #1a1a1a;
+  --primary-color: #3f66ff;
+  --main-page-bg-color: #f1f1f1;
+  --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-elevation: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  --input-bg: rgba(255, 255, 255, 0.6);
+  --input-bg-focus: rgba(255, 255, 255, 0.85);
+  --input-bg-disabled: rgba(240, 240, 240, 0.6);
+  --input-text: #1a1a1a;
+  --input-text-disabled: #999;
+  --input-placeholder: #666;
+  --input-border-color: rgba(0, 0, 0, 0.1);
+  --input-border-disabled: rgba(0, 0, 0, 0.05);
+
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --separator-color: rgba(0, 0, 0, 0.1);
+
+  --btn-bg: rgba(255, 255, 255, 0.6);
+  --btn-text: #1a1a1a;
+  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --btn-primary-bg: rgba(58, 125, 255, 0.15);
+  --btn-primary-text: #3a7dff;
+  --btn-primary-border: rgba(58, 125, 255, 0.4);
+  --btn-primary-hover-bg: rgba(58, 125, 255, 0.25);
+  --btn-primary-hover-shadow: 0 6px 16px rgba(58, 125, 255, 0.25);
+  --btn-outline-color: #3a7dff;
+  --btn-outline-border: rgba(58, 125, 255, 0.6);
+  --btn-outline-hover-bg: rgba(58, 125, 255, 0.08);
+  --btn-ghost-color: #3a7dff;
+  --btn-focus-ring: rgba(58, 125, 255, 0.3);
+
+  --alert-success-bg: #e6f9f0;
+  --alert-success-text: #1b7f5c;
+  --alert-success-icon: #1b7f5c;
+  --alert-success-border: #b3e9d0;
+  --alert-success-shadow: 0 2px 6px rgba(27, 127, 92, 0.1);
+
+  --alert-warning-bg: #fff4e5;
+  --alert-warning-text: #a15c00;
+  --alert-warning-icon: #a15c00;
+  --alert-warning-border: #ffd8a8;
+  --alert-warning-shadow: 0 2px 6px rgba(161, 92, 0, 0.1);
+  --alert-info-bg: #e7f1ff;
+  --alert-info-text: #2563eb;
+  --alert-info-icon: #2563eb;
+  --alert-info-border: #bcdcff;
+  --alert-info-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+  --alert-error-bg: #fdecea;
+  --alert-error-text: #c0392b;
+  --alert-error-icon: #c0392b;
+  --alert-error-border: #fab1a0;
+  --alert-error-shadow: 0 2px 6px rgba(192, 57, 43, 0.1);
+
+  --badge-info-bg: rgba(37, 99, 235, 0.2);
+  --badge-info-color: #2563eb;
+  --badge-info-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
+  --badge-success-bg: rgba(27, 127, 92, 0.2);
+  --badge-success-color: #1b7f5c;
+  --badge-success-shadow: 0 2px 6px rgba(27, 127, 92, 0.15);
+  --badge-warning-bg: rgba(161, 92, 0, 0.2);
+  --badge-warning-color: #a15c00;
+  --badge-warning-shadow: 0 2px 6px rgba(161, 92, 0, 0.15);
+  --badge-error-bg: rgba(192, 57, 43, 0.2);
+  --badge-error-color: #c0392b;
+  --badge-error-shadow: 0 2px 6px rgba(192, 57, 43, 0.15);
+
+  --toggle-bg: rgba(200, 200, 200, 0.4);
+  --toggle-border: rgba(255, 255, 255, 0.3);
+  --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --toggle-knob-bg: #ffffff;
+  --toggle-knob-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --toggle-active-bg: rgba(123, 97, 255, 0.4);
+  --toggle-active-border: rgba(123, 97, 255, 0.6);
+}
+
+// Dark Theme override
+.dark-theme {
+  --bg-color: #252732;
+  --text-color: #f4f4f4;
+  --primary-color: #7b61ff;
+  --main-page-bg-color: #15151f;
+  --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-elevation: 0 4px 14px rgba(255, 255, 255, 0.06);
+
+  --input-bg: rgba(30, 30, 35, 0.7);
+  --input-bg-focus: rgba(45, 45, 55, 0.85);
+  --input-bg-disabled: rgba(60, 60, 70, 0.3);
+  --input-text: #f4f4f4;
+  --input-text-disabled: #777;
+  --input-placeholder: #aaa;
+  --input-border-color: rgba(255, 255, 255, 0.15);
+  --input-border-disabled: rgba(255, 255, 255, 0.05);
+
+  --card-bg: rgba(30, 30, 30, 0.35);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.6);
+  --separator-color: rgba(255, 255, 255, 0.08);
+
+  --btn-bg: rgba(30, 30, 30, 0.4);
+  --btn-text: #f4f4f4;
+  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  --btn-primary-bg: rgba(58, 125, 255, 0.15);
+  --btn-primary-text: #7dabff;
+  --btn-primary-border: rgba(58, 125, 255, 0.3);
+  --btn-primary-hover-bg: rgba(58, 125, 255, 0.25);
+  --btn-primary-hover-shadow: 0 6px 16px rgba(58, 125, 255, 0.4);
+  --btn-outline-color: #7dabff;
+  --btn-outline-border: rgba(58, 125, 255, 0.5);
+  --btn-outline-hover-bg: rgba(58, 125, 255, 0.12);
+  --btn-ghost-color: #7dabff;
+  --btn-focus-ring: rgba(58, 125, 255, 0.4);
+
+  --alert-success-bg: rgba(27, 127, 92, 0.1);
+  --alert-success-text: #b3e9d0;
+  --alert-success-icon: #34d399;
+  --alert-success-border: rgba(27, 127, 92, 0.4);
+  --alert-success-shadow: 0 2px 6px rgba(27, 127, 92, 0.3);
+  --alert-warning-bg: rgba(161, 92, 0, 0.1);
+  --alert-warning-text: #ffd8a8;
+  --alert-warning-icon: #f59e0b;
+  --alert-warning-border: rgba(161, 92, 0, 0.4);
+  --alert-warning-shadow: 0 2px 6px rgba(161, 92, 0, 0.3);
+  --alert-info-bg: rgba(37, 99, 235, 0.1);
+  --alert-info-text: #93c5fd;
+  --alert-info-icon: #3b82f6;
+  --alert-info-border: rgba(37, 99, 235, 0.4);
+  --alert-info-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+  --alert-error-bg: rgba(192, 57, 43, 0.1);
+  --alert-error-text: #fab1a0;
+  --alert-error-icon: #ef4444;
+  --alert-error-border: rgba(192, 57, 43, 0.4);
+  --alert-error-shadow: 0 2px 6px rgba(192, 57, 43, 0.3);
+
+  --badge-info-bg: rgba(147, 197, 253, 0.1);
+  --badge-info-color: #93c5fd;
+  --badge-info-shadow: 0 2px 6px rgba(147, 197, 253, 0.2);
+  --badge-success-bg: rgba(52, 211, 153, 0.1);
+  --badge-success-color: #34d399;
+  --badge-success-shadow: 0 2px 6px rgba(52, 211, 153, 0.2);
+  --badge-warning-bg: rgba(251, 191, 36, 0.1);
+  --badge-warning-color: #fbbf24;
+  --badge-warning-shadow: 0 2px 6px rgba(251, 191, 36, 0.2);
+  --badge-error-bg: rgba(239, 68, 68, 0.1);
+  --badge-error-color: #ef4444;
+  --badge-error-shadow: 0 2px 6px rgba(239, 68, 68, 0.2);
+
+  --toggle-bg: rgba(200, 200, 200, 0.4);
+  --toggle-border: rgba(255, 255, 255, 0.3);
+  --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --toggle-knob-bg: #ffffff;
+  --toggle-knob-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --toggle-active-bg: rgba(123, 97, 255, 0.4);
+  --toggle-active-border: rgba(123, 97, 255, 0.6);
+}

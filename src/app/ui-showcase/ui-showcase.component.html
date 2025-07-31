@@ -1,0 +1,68 @@
+<section class="ui-showcase-wrapper">
+  <div class="ui-showcase">
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" [checked]="theme === 'dark'" (change)="toggleTheme()" />
+        <span class="slider"></span>
+      </label>
+      <span class="theme-label">{{ theme === 'dark' ? 'Dark Mode' : 'Light Mode' }}</span>
+    </div>
+
+    <header class="showcase-header">
+      <h1>NeoGlass UI Kit — Component Showcase</h1>
+      <p>
+        Explore all basic components included in the <strong>Standard Package</strong>.
+        Designed for speed, consistency, and seamless dark/light theming.
+      </p>
+    </header>
+
+    <!-- Buttons Full Width -->
+    <section class="component-box">
+      <h2>Buttons</h2>
+      <div class="button-row">
+        <app-button label="Primary" type="primary" size="md"></app-button>
+        <app-button label="Outline" type="outline" size="md"></app-button>
+        <app-button label="Ghost" type="ghost" size="md"></app-button>
+        <app-button label="Disabled" type="primary" size="md" [disabled]="true"></app-button>
+      </div>
+    </section>
+
+    <!-- Grid: Alerts | Inputs + Badges -->
+    <div class="mid-grid">
+      <section class="component-box alerts-box">
+        <h2>Alerts</h2>
+        <app-alert type="success" message="Operation successful!"></app-alert>
+        <app-alert type="warning" message="Check your input."></app-alert>
+        <app-alert type="info" message="This is an informational alert."></app-alert>
+        <app-alert type="error" message="Something went wrong."></app-alert>
+      </section>
+
+      <div class="right-side">
+        <section class="component-box">
+          <h2>Inputs</h2>
+          <app-input placeholder="Enter your name"></app-input>
+          <app-input placeholder="Disabled input" [disabled]="true"></app-input>
+        </section>
+
+        <section class="component-box">
+          <h2>Badges</h2>
+          <div class="inline-badges">
+            <app-badge content="New" type="info" variant="inline"></app-badge>
+            <app-badge content="Pro" type="success" variant="inline"></app-badge>
+          </div>
+          <div class="badge-button-wrapper">
+            <app-button label="Inbox" type="primary"></app-button>
+            <app-badge content="3" type="error" variant="absolute"></app-badge>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Cards Full Width -->
+    <section class="component-box">
+      <h2>Cards</h2>
+      <app-card title="Basic Card" content="This is a standard card component." footer="Read more"></app-card>
+    </section>
+  </div>
+</section>

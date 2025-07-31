@@ -1,0 +1,74 @@
+@import '../../../../theme/variables';
+
+.neo-btn {
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  backdrop-filter: $blur-md;
+  box-shadow: var(--btn-shadow);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  width: 100%;
+
+  &.sm {
+    font-size: 0.75rem;
+    padding: $spacing-sm $spacing-md;
+  }
+
+  &.md {
+    font-size: 0.875rem;
+    padding: $spacing-md $spacing-lg;
+  }
+
+  &.lg {
+    font-size: 1rem;
+    padding: $spacing-lg $spacing-xl;
+  }
+
+  &.primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: 1px solid var(--btn-primary-border);
+
+    &:hover {
+      background: var(--btn-primary-hover-bg);
+      box-shadow: var(--btn-primary-hover-shadow);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &.outline {
+    background: transparent;
+    color: var(--btn-outline-color);
+    border: 1px solid var(--btn-outline-border);
+
+    &:hover {
+      background: var(--btn-outline-hover-bg);
+    }
+  }
+
+  &.ghost {
+    background: none;
+    border: none;
+    color: var(--btn-ghost-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--btn-focus-ring);
+  }
+}

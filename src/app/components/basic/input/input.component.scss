@@ -1,0 +1,36 @@
+@import '../../../../theme/variables';
+@import '../../../../theme/theme.scss';
+
+.neo-input {
+  width: 100%;
+  padding: $spacing-md $spacing-md;
+  border: 1px solid var(--input-border-color);
+  border-radius: $radius-md;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  transition: all 0.25s ease-in-out;
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-elevation);
+  max-width: -webkit-fill-available;
+
+  &::placeholder {
+    color: var(--input-placeholder);
+    font-weight: 400;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--input-bg-focus);
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+
+  &:disabled {
+    background-color: var(--input-bg-disabled);
+    cursor: not-allowed;
+    color: var(--input-text-disabled);
+    border-color: var(--input-border-disabled);
+  }
+}

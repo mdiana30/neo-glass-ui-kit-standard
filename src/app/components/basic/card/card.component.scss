@@ -1,0 +1,45 @@
+@import '../../../../theme/variables';
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: $radius-md;
+  box-shadow: var(--card-shadow);
+  padding: $spacing-lg;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+
+  .card-header {
+    margin-bottom: $spacing-sm;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  .card-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: $spacing-md;
+  }
+
+  .card-separator {
+    border: none;
+    height: 1px;
+    background: var(--separator-color);
+    margin-bottom: $spacing-md;
+  }
+
+  .card-footer {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+}

@@ -1,0 +1,55 @@
+// -------------------------------
+// 🎨 Color Palette (NeoGlass)
+// -------------------------------
+
+$color-primary: #4f8bff;
+$color-primary-dark: #3a6edc;
+$color-accent: #ff57c1;
+
+$color-success: #1b7f5c;
+$color-warning: #a15c00;
+$color-info: #2563eb;
+$color-error: #c0392b;
+
+$color-bg-light: #f2f2f2;
+$color-bg-dark: #0f0f12;
+
+$color-surface-light: #ffffff;
+$color-surface-dark: #1a1a1f;
+
+$color-text-light: #1a1a1a;
+$color-text-dark: #f4f4f4;
+
+// -------------------------------
+// 📏 Spacing Scale
+// -------------------------------
+
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+
+// -------------------------------
+// 🟢 Border Radius
+// -------------------------------
+
+$radius-xs: 4px;
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// -------------------------------
+// 🌀 Shadows
+// -------------------------------
+
+$shadow-glass: 0 4px 14px rgba(0, 0, 0, 0.08);
+$shadow-elevated: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+// -------------------------------
+// 💎 Effects
+// -------------------------------
+
+$blur-sm: blur(4px);
+$blur-md: blur(8px);
+$blur-lg: blur(12px);

@@ -1,35 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ButtonsPageComponent } from './pages/buttons-page/buttons-page.component';
-import { CardsPageComponent } from './pages/cards-page/cards-page.components';
-import { CardsModule } from './components/cards/cards.module';
-import { ButtonsModule } from './components/button/buttons.module';
-
-
-const routes: Routes = [
-  { path: '', redirectTo: 'buttons', pathMatch: 'full' },
-  { path: 'buttons', component: ButtonsPageComponent },
-  { path: 'cards', component: CardsPageComponent },
-];
+import { UiShowcaseComponent } from './ui-showcase/ui-showcase.component';
+import { RouterModule } from '@angular/router';
+import { ButtonComponent } from './components/basic/button/button.component';
+import { AlertComponent } from './components/basic/alert/alert.component';
+import { BadgeComponent } from './components/basic/badge/badge.component';
+import { CardComponent } from './components/basic/card/card.component';
+import { InputComponent } from './components/basic/input/input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    ButtonsPageComponent,
-    CardsPageComponent
-  ],
-  imports: [
-    ButtonsModule,
-    CardsModule,
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        UiShowcaseComponent,
+        AlertComponent,
+        BadgeComponent,
+        ButtonComponent,
+        CardComponent,
+        InputComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule, 
+        RouterModule.forRoot([
+            { path: '', redirectTo: 'ui-showcase', pathMatch: 'full' },
+            { path: 'ui-showcase', component: UiShowcaseComponent }]
+        )],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
