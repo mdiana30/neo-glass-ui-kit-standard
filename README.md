@@ -35,7 +35,6 @@ The Standard Package contains all the core UI components with a glassmorphic aes
 1. **Clone the repository** or copy the `standard` folder:
    ```bash
    git clone https://github.com/mdiana30/neo-glass-ui-kit-standard.git
-   cd neoglass-ui-kit/packages/standard
    ```
 
 2. **Install dependencies**:
